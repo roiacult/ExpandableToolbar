@@ -23,7 +23,7 @@ class ExpandableToolbar @JvmOverloads constructor(context: Context, attribute : 
         successText = typedArray.getString(R.styleable.ExpandableToolbar_successText) ?: DEFAULT_SUCCESS_TEXT
         animationDuration = typedArray.getInt(R.styleable.ExpandableToolbar_animationDuration, DEFAULT_ANIMATION_DURATION.toInt()).toLong()
         hidingDuration = typedArray.getInt(R.styleable.ExpandableToolbar_hidingDuration,-1)
-        )
+
 
         typedArray.recycle()
     }
