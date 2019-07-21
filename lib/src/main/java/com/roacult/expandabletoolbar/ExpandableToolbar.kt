@@ -3,6 +3,8 @@ package com.roacult.expandabletoolbar
 import android.animation.ValueAnimator
 import android.content.Context
 import android.net.NetworkInfo
+import android.os.Bundle
+import android.os.Parcelable
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.widget.FrameLayout
@@ -37,6 +39,24 @@ class ExpandableToolbar @JvmOverloads constructor(context: Context, attribute : 
     var isConnected = false
         private set
 
+    override fun onSaveInstanceState(): Parcelable? {
+        val superState = super.onSaveInstanceState()
+        return Bundle().apply {
+            putParcelable(SUPER_STATE_KEY,superState)
+            putFloat(EXPANSION_KEY,expansion)
+            putBoolean(CONNECTION_STATE_KEY,isConnected)
+        }
+    }
+
+    override fun onRestoreInstanceState(state: Parcelable?) {
+        val bundle = state as Bundle
+        super.onRestoreInstanceState(bundle.getParcelable(SUPER_STATE_KEY))
+        expansion = bundle.getFloat(EXPANSION_KEY)
+        isConnected = bundle.getBoolean(CONNECTION_STATE_KEY)
+        post{
+            upDateState(false)
+        }
+    }
 
     init {
         val typedArray = context.obtainStyledAttributes(attribute , R.styleable.ExpandableToolbar)
@@ -142,6 +162,11 @@ class ExpandableToolbar @JvmOverloads constructor(context: Context, attribute : 
     }
 
     companion object {
+
+        const val SUPER_STATE_KEY = "super_state_key"
+        const val EXPANSION_KEY = "expansion_key"
+        const val CONNECTION_STATE_KEY = "connection_state_key"
+
         const val DEFAULT_FAIL_COLOR = -5242848
         const val DEFAULT_SUCCESS_COLOR = -15701248
         const val DEFAULT_TEXT_COLOR = -1
