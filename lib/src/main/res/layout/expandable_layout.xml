@@ -15,6 +15,7 @@
 
     <androidx.appcompat.widget.Toolbar
             android:id="@+id/expand_toolbar"
+            android:background="?attr/colorPrimary"
             android:layout_width="match_parent"
             android:layout_height="56dp"/>
 
