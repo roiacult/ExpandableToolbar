@@ -170,7 +170,7 @@ class ExpandableToolbar @JvmOverloads constructor(context: Context, attribute : 
         const val DEFAULT_FAIL_COLOR = -5242848
         const val DEFAULT_SUCCESS_COLOR = -15701248
         const val DEFAULT_TEXT_COLOR = -1
-        const val DEFAULT_FAIL_TEXT = "there is no internet connection"
+        const val DEFAULT_FAIL_TEXT = "no internet connection"
         const val DEFAULT_SUCCESS_TEXT = "you are connected"
 
         const val DEFAULT_ANIMATION_DURATION = 300L

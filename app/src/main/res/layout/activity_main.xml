@@ -6,6 +6,7 @@
               android:layout_height="match_parent">
 
     <com.roacult.expandabletoolbar.ExpandableToolbar
+            android:id="@+id/expand_toolbar"
             app:hidingDuration = "3000"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
