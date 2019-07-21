@@ -20,7 +20,7 @@ class ExpandableToolbar @JvmOverloads constructor(context: Context, attribute : 
 
     private val view = LayoutInflater.from(context).inflate(R.layout.expandable_layout,this,true)
     private val textView = view.findViewById<TextView>(R.id.connetivity_state_text)
-    val toolbar = view.findViewById<Toolbar>(R.id.expand_toolbar)!!
+    val toolbar = view.findViewById<Toolbar>(R.id.com_roacult_expandabletoolbar)!!
 
     private val toolbarHeight = Math.round(dpToPx(56))
     private var expansion = 0F

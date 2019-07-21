@@ -23,7 +23,7 @@ android {
 }
 
 dependencies {
-    implementation project(':lib')
+    implementation 'com.github.roiacult:ExpandableToolbar:beta'
     implementation deps.kotlin.kotlin_jre
     implementation deps.android.appcompat
     implementation deps.android.constraint_layout
